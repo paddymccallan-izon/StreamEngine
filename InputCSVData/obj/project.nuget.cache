@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "/J2D1bT5V2ZDjTRD2ADwNCEFDYu7c47EI/TDWxgy57EJgVGrjLZeLiUXzGXOc9K0JHGAJ7yi80cVwd5TnHp5Kg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Paddy\\source\\repos\\InputCSVData\\InputCSVData\\InputCSVData.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Paddy\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
+    "C:\\Users\\Paddy\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Paddy\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Paddy\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Paddy\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Paddy\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Paddy\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}

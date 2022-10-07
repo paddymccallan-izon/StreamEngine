@@ -1,24 +1,92 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Paddy\\source\\repos\\InputCSVData\\InputCSVData\\InputCSVData.csproj": {}
+    "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\InputCSVData\\InputCSVData.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Paddy\\source\\repos\\InputCSVData\\InputCSVData\\InputCSVData.csproj": {
+    "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\CSVData.Producer.Service\\CSVData.Producer.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Paddy\\source\\repos\\InputCSVData\\InputCSVData\\InputCSVData.csproj",
-        "projectName": "InputCSVData",
-        "projectPath": "C:\\Users\\Paddy\\source\\repos\\InputCSVData\\InputCSVData\\InputCSVData.csproj",
-        "packagesPath": "C:\\Users\\Paddy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Paddy\\source\\repos\\InputCSVData\\InputCSVData\\obj\\",
+        "projectUniqueName": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\CSVData.Producer.Service\\CSVData.Producer.Service.csproj",
+        "projectName": "CSVData.Producer.Service",
+        "projectPath": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\CSVData.Producer.Service\\CSVData.Producer.Service.csproj",
+        "packagesPath": "C:\\Users\\zeesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\CSVData.Producer.Service\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Paddy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\zeesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Confluent.Kafka": {
+              "target": "Package",
+              "version": "[1.9.3, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\InputCSVData\\InputCSVData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\InputCSVData\\InputCSVData.csproj",
+        "projectName": "InputCSVData",
+        "projectPath": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\InputCSVData\\InputCSVData.csproj",
+        "packagesPath": "C:\\Users\\zeesh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\InputCSVData\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\zeesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,13 +94,16 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\CSVData.Producer.Service\\CSVData.Producer.Service.csproj": {
+                "projectPath": "C:\\Users\\zeesh\\Documents\\Projects\\izon\\StreamEngine\\CSVData.Producer.Service\\CSVData.Producer.Service.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -60,8 +131,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -73,7 +143,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

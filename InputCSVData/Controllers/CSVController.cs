@@ -1,10 +1,11 @@
-﻿using CsvHelper;
+﻿using CSVData.Producer.Service;
+using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using System.Formats.Asn1;
 using System.Globalization;
 using System.Text;
+using System.Text.Json;
 
 namespace InputCSVData.Controllers
 {
@@ -12,18 +13,31 @@ namespace InputCSVData.Controllers
     [Route("[controller]")]
     public class CSVController : ControllerBase
     {
+        private readonly ISendMessage producer;
+
+        public CSVController(ISendMessage producer)
+        {
+            this.producer = producer;
+        }
 
         [HttpGet("GetCSVData")]
-        public List<Metric> GetCsvData()
+        public async Task<IActionResult> GetCsvData()
         {
-            var config = new CsvConfiguration(CultureInfo.InvariantCulture) { Delimiter = ",", PrepareHeaderForMatch = header => header.Header.ToLower()};
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture) { Delimiter = ",", PrepareHeaderForMatch = header => header.Header.ToLower() };
             using (var reader = new StreamReader("StreamEngine_data.csv", Encoding.UTF8))
             using (var csv = new CsvReader(reader, config))
 
             {
                 var records = csv.GetRecords<Metric>();
-                return records.ToList();
+                foreach (var record in records)
+                {
+                    string key = string.Empty;
+                    string message = JsonSerializer.Serialize(record);
+                    await producer.SendMessageRequest(key, message);
+                }
             }
+
+            return Ok();
         }
 
         public class Metric
@@ -37,7 +51,7 @@ namespace InputCSVData.Controllers
             public int? _met2 { get; set; }
             [Index(3)]
             public int? _met3 { get; set; }
-            [Index(4)] 
+            [Index(4)]
             public int? _met4 { get; set; }
             [Index(5)]
             public int? _met5 { get; set; }

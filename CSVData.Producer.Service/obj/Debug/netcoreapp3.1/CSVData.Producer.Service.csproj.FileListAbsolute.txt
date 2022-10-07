@@ -1,0 +1,10 @@
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\bin\Debug\netcoreapp3.1\CSVData.Producer.Service.deps.json
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\bin\Debug\netcoreapp3.1\CSVData.Producer.Service.dll
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\bin\Debug\netcoreapp3.1\CSVData.Producer.Service.pdb
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.csproj.AssemblyReference.cache
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.AssemblyInfoInputs.cache
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.AssemblyInfo.cs
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.csproj.CoreCompileInputs.cache
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.dll
+C:\Users\zeesh\Documents\Projects\izon\StreamEngine\CSVData.Producer.Service\obj\Debug\netcoreapp3.1\CSVData.Producer.Service.pdb

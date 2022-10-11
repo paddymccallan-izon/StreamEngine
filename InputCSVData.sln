@@ -7,9 +7,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputCSVData", "InputCSVDat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSVData.Producer.Service", "CSVData.Producer.Service\CSVData.Producer.Service.csproj", "{C9256A73-AA79-47DD-A058-FC7AFF500B56}"
 EndProject
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSVData.Consumer", "CSVData.Consumer\CSVData.Consumer.csproj", "{6C9938AB-1A1C-4A78-9EA6-A246B1E5756D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVData.Producer", "CSVData.Producer\CSVData.Producer.csproj", "{4B58C45B-BED3-477B-B287-2001BEE5B95D}"
+=======
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{51873250-035B-45E1-930F-0E800E2403CD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+>>>>>>> master
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

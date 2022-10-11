@@ -24,9 +24,11 @@ namespace InputCSVData.Controllers
         public async Task<IActionResult> GetCsvData()
         {
             var config = new CsvConfiguration(CultureInfo.InvariantCulture) { Delimiter = ",", PrepareHeaderForMatch = header => header.Header.ToLower() };
+
+            DateTime startTime = DateTime.UtcNow;
+
             using (var reader = new StreamReader("StreamEngine_data.csv", Encoding.UTF8))
             using (var csv = new CsvReader(reader, config))
-
             {
                 var records = csv.GetRecords<Metric>();
                 foreach (var record in records)
@@ -37,7 +39,10 @@ namespace InputCSVData.Controllers
                 }
             }
 
-            return Ok();
+            DateTime endTime = DateTime.UtcNow;
+            string duration = (endTime - startTime).TotalMilliseconds.ToString();
+
+            return Ok(duration);
         }
 
         public class Metric

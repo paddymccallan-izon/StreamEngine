@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Confluent.Kafka;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using StreamEngine.Producer.Service;
-using System.Text.Json;
+using System.Net;
 
 var services = new ServiceCollection()
     .AddLogging(logging => logging.AddConsole());
@@ -13,22 +13,45 @@ var builder = new ConfigurationBuilder()
 
 IConfiguration configuration = builder.Build();
 services.AddSingleton(configuration);
-services.AddStreamEngineProducerService(configuration);
 var serviceProvider = services.BuildServiceProvider();
-var producer = serviceProvider.GetRequiredService<ISendMessage>();
+
+var bootstrapServer = configuration.GetSection("BOOTSTRAP_SERVER").Value;
+var userName = configuration.GetSection("CREDENTIALS").GetSection("USER_NAME").Value;
+var password = configuration.GetSection("CREDENTIALS").GetSection("PASSWORD").Value;
+var topic = configuration.GetSection("TOPICS").GetSection("TEST_TOPIC").Value;
+
+var config = new ProducerConfig
+{
+    Acks = Acks.All,
+    BootstrapServers = bootstrapServer,
+    SecurityProtocol = SecurityProtocol.SaslSsl,
+    SaslMechanism = SaslMechanism.Plain,
+    SaslUsername = userName,
+    SaslPassword = password,
+    ClientId = Dns.GetHostName(),
+};
+
+Action<DeliveryReport<string, string>> handler = r =>
+    Console.WriteLine(!r.Error.IsError
+        ? $"Delivered message to {r.TopicPartitionOffset} "
+        : $"Delivery error: {r.Error.Reason} ");
 
 string file = Path.GetFullPath("data.txt");
 var contents = File.ReadAllBytes(file);
-using (MemoryStream ms = new (contents))
+using (MemoryStream ms = new(contents))
 {
     using var reader = new StreamReader(ms);
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+
+    using var producer = new ProducerBuilder<string, string>(config).Build();
+
     while (!reader.EndOfStream)
     {
         var line = reader.ReadLine();
         var key = Guid.NewGuid().ToString();
-
-        await producer.SendMessageRequest(key, line);
+        if (!string.IsNullOrEmpty(line))
+        {
+            producer.Produce(topic, new Message<string, string> { Key = key, Value = line.ToString() }, handler);
+            Console.WriteLine(DateTime.UtcNow.ToString());
+        }
     }
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
 }

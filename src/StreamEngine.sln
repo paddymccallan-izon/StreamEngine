@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "producer", "producer", "{9C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamEngine.Producer", "producer\StreamEngine.Producer\StreamEngine.Producer.csproj", "{A8CEB836-2EF2-4213-A57D-DB683A3179AE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consumer", "consumer", "{C1CE19F4-C0F7-473B-A6C4-D4B95D5A4AB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamEngine.Consumer", "consumer\StreamEngine.Consumer\StreamEngine.Consumer.csproj", "{74AC0040-B2D2-4C69-8547-D4712E82EA0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{A8CEB836-2EF2-4213-A57D-DB683A3179AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8CEB836-2EF2-4213-A57D-DB683A3179AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8CEB836-2EF2-4213-A57D-DB683A3179AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74AC0040-B2D2-4C69-8547-D4712E82EA0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74AC0040-B2D2-4C69-8547-D4712E82EA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74AC0040-B2D2-4C69-8547-D4712E82EA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74AC0040-B2D2-4C69-8547-D4712E82EA0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A8CEB836-2EF2-4213-A57D-DB683A3179AE} = {9C4011C6-F5E2-4275-8620-98C658ADE7F5}
+		{74AC0040-B2D2-4C69-8547-D4712E82EA0F} = {C1CE19F4-C0F7-473B-A6C4-D4B95D5A4AB2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {151E9EEE-E599-4DA1-B2FF-000EFFAF1378}

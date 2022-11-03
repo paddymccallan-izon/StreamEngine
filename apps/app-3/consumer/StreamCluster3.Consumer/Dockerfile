@@ -4,8 +4,8 @@ FROM mcr.microsoft.com/dotnet/runtime:6.0 AS base
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["app-3/consumer/StreamCluster3.Consumer/StreamCluster3.Consumer.csproj", "app-3/consumer/StreamCluster3.Consumer/"]
+WORKDIR /apps
+COPY ["StreamCluster3.Consumer.csproj", "app-3/consumer/StreamCluster3.Consumer/"]
 RUN dotnet restore "app-3/consumer/StreamCluster3.Consumer/StreamCluster3.Consumer.csproj"
 COPY . .
 WORKDIR "/apps/app-3/consumer/StreamCluster3.Consumer"

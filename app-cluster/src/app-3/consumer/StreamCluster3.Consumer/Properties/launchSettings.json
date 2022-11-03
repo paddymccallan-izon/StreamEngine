@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StreamCluster3.Consumer": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

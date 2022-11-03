@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ZRsLsA5iUoT0mD8vKPldA4eHUHtGaIcnt3TNPIksy5P75fjeNZktWZ0AftrPF2awYOSDCVR/CemaKCMGendGw==",
+  "dgSpecHash": "Mx5piOsr+HAqEGZBkYMUCmCcN9v75qE5kyKYqP8vYuPc77ltko1J6o6hWfLvhdkEAKkn9J9yZpfz7jmy1JCnFw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paddy\\source\\repos\\StreamEngine\\InputCSVData\\InputCSVData.csproj",
+  "projectFilePath": "C:\\StreamEngine\\InputCSVData\\InputCSVData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paddy\\.nuget\\packages\\confluent.kafka\\1.9.3\\confluent.kafka.1.9.3.nupkg.sha512",
     "C:\\Users\\paddy\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512",
@@ -31,12 +31,5 @@
     "C:\\Users\\paddy\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\paddy\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\paddy\\source\\repos\\StreamEngine\\InputCSVData\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

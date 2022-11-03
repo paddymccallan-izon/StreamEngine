@@ -6,7 +6,7 @@ WORKDIR /src
 COPY ["app-1/producer/StreamCluster1.Producer/StreamCluster1.Producer.csproj", "app-1/producer/StreamCluster1.Producer/"]
 RUN dotnet restore "app-1/producer/StreamCluster1.Producer/StreamCluster1.Producer.csproj"
 COPY . .
-WORKDIR "/src/app-1/producer/StreamCluster1.Producer"
+WORKDIR "/apps/app-1/producer/StreamCluster1.Producer"
 RUN dotnet build "StreamCluster1.Producer.csproj" -c Release -o /app/build
 
 FROM build AS publish

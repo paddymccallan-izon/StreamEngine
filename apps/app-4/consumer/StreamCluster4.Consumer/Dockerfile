@@ -8,7 +8,7 @@ WORKDIR /src
 COPY ["app-4/consumer/StreamCluster4.Consumer/StreamCluster4.Consumer.csproj", "app-4/consumer/StreamCluster4.Consumer/"]
 RUN dotnet restore "app-4/consumer/StreamCluster4.Consumer/StreamCluster4.Consumer.csproj"
 COPY . .
-WORKDIR "/src/app-4/consumer/StreamCluster4.Consumer"
+WORKDIR "/apps/app-4/consumer/StreamCluster4.Consumer"
 RUN dotnet build "StreamCluster4.Consumer.csproj" -c Release -o /app/build
 
 FROM build AS publish

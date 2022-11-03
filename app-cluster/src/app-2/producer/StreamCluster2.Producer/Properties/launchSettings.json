@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StreamCluster2.Producer": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -5,7 +5,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /apps
-COPY ["/StreamCluster3.Consumer.csproj", "app-3/consumer/StreamCluster3.Consumer/"]
+COPY ["StreamCluster3.Consumer.csproj", "app-3/consumer/StreamCluster3.Consumer/"]
 RUN dotnet restore "app-3/consumer/StreamCluster3.Consumer/StreamCluster3.Consumer.csproj"
 COPY . .
 WORKDIR "/apps/app-3/consumer/StreamCluster3.Consumer"

@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using StreamCluster4.Producer;
 using System.Net;
 
 var services = new ServiceCollection()
@@ -36,24 +38,21 @@ Action<DeliveryReport<string, string>> handler = r =>
         ? $"Delivered message to {r.TopicPartitionOffset} "
         : $"Delivery error: {r.Error.Reason} ");
 
-string file = Path.GetFullPath("data.txt");
-var contents = File.ReadAllBytes(file);
-using (MemoryStream ms = new(contents))
+var contents = InMemoryData.GetMetrics();
+int count = 0;
+using var producer = new ProducerBuilder<string, string>(config).Build();
+
+while (true)
 {
-    using var reader = new StreamReader(ms);
-
-    using var producer = new ProducerBuilder<string, string>(config).Build();
-
-    while (!reader.EndOfStream)
+    var item = contents[count];
+    var key = Guid.NewGuid().ToString();
+    if (!string.IsNullOrEmpty(JsonConvert.SerializeObject(item)))
     {
-        var line = reader.ReadLine();
-        var key = Guid.NewGuid().ToString();
-        if (!string.IsNullOrEmpty(line))
-        {
-            producer.Produce(topic, new Message<string, string> { Key = key, Value = line.ToString() }, handler);
-            Console.WriteLine(DateTime.UtcNow.ToString());
-            _ = int.TryParse(configuration.GetSection("THREAD_SLEEP").Value, out int sleepTime);
-            Thread.Sleep(sleepTime);
-        }
+        producer.Produce(topic, new Message<string, string> { Key = key, Value = JsonConvert.SerializeObject(item) }, handler);
+        Console.WriteLine(DateTime.UtcNow.ToString());
+        _ = int.TryParse(configuration.GetSection("THREAD_SLEEP").Value, out int sleepTime);
+        Thread.Sleep(sleepTime);
+        contents.Add(item);
+        count++;
     }
 }
